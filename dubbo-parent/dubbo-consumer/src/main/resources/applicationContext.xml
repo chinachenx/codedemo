@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--配置服务应用名称-->
+    <dubbo:application name="dubbo-consumer" />
+
+    <!--引用远程dubbo服务,url="dubbo://127.0.0.1:20880"指定调用服务地址，默认dubbo协议，默认端口20880-->
+    <dubbo:reference id="personApi" interface="com.dubbo.provider.Person"  url="dubbo://127.0.0.1:20880" />
+</beans>
